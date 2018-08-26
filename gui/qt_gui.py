@@ -49,7 +49,7 @@ class DefectClassWindow:
         # load model interface
         self.model = ei.EnsembleModel()
         self.graph1 = self.model.model_inception.modelGraph()
-        self.graph2 = self.model.model_mobilenet.modelGraph()
+        #self.graph2 = self.model.model_mobilenet.modelGraph()
 
     def openButtonClicked(self):
 
@@ -73,8 +73,8 @@ class DefectClassWindow:
             # loop, cut blocks and detect
             irow = 0
             icol = 0
-            side_length = 250
-            overlap = 100
+            side_length = 100
+            overlap = 50
 
             move_row = False
             last_block = False
@@ -90,7 +90,7 @@ class DefectClassWindow:
 
             # main loop
             with tf.Session(graph=self.graph1) as sess1:
-                with tf.Session(graph=self.graph2) as sess2:
+#                with tf.Session(graph=self.graph2) as sess2:
 
                     while True:
                         # cut
@@ -110,7 +110,7 @@ class DefectClassWindow:
                         self.image_label.setPixmap(pixmap)
 
                         # call tensorflow API
-                        defect = self.model.predict(img_name, sess1, sess2)
+                        defect = self.model.predict(img_name, sess1)
 
                         # mark on origin image when defect detected
                         if defect:

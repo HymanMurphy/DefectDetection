@@ -1,5 +1,4 @@
-daisy
-dandelion
-roses
-sunflowers
-tulips
+normal
+type1
+type11
+type4

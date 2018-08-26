@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 model_dir = 'trained_model/inception_v3'
 model_name = 'output_graph_incep.pb'
-image_dir = 'test'
+image_dir = 'gray_test'
 label_dir = 'trained_model/inception_v3'
 label_filename = 'output_labels.txt'
 
@@ -78,5 +78,7 @@ with tf.Session() as sess:
                     label_dir, label_filename))[label_index]
                 # 获取该分类的置信度
                 label_score = predictions[label_index]
-                print('%s (score = %.5f)' % (label_name, label_score))
+                print(label_name)
+                #print('%s (score = %.5f)' % (label_name, label_score))
+                break
             print()

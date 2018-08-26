@@ -1299,7 +1299,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--image_dir',
         type=str,
-        default='D:/data',
+        default='D:/gray_img',
         help='Path to folders of labeled images.'
     )
     parser.add_argument(
@@ -1368,7 +1368,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--train_batch_size',
         type=int,
-        default=50,
+        default=100,
         help='How many images to train on at a time.'
     )
     parser.add_argument(
@@ -1385,7 +1385,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--validation_batch_size',
         type=int,
-        default=50,
+        default=100,
         help="""\
       How many images to use in an evaluation batch. This validation set is
       used much more often than the test set, and is an early indicator of how
@@ -1480,7 +1480,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--saved_model_dir',
         type=str,
-        default='../mtmp/saved_models/defect/',
+        default='../mtmp/saved_models/inception_defect/',
         help='Where to save the exported graph.')
     FLAGS, unparsed = parser.parse_known_args()
     tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
